@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76c98309ae61cd243932c14e893ccd2f
+guid: 3ae9f5699a7e0094189ff4a45fb7f784
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
@@ -8,8 +8,8 @@ NativeFormatImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 156015
-  packageName: Unity Learn | FPS Microgame | URP
-  packageVersion: 3.1.0
+  productId: 87901
+  packageName: Endless Runner - Sample Game
+  packageVersion: 1.97.1
   assetPath: Assets/UniversalRenderPipelineGlobalSettings.asset
-  uploadId: 627568
+  uploadId: 518529
