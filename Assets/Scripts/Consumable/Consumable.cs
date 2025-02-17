@@ -99,16 +99,16 @@ public abstract class Consumable : MonoBehaviour
                 Addressables.ReleaseInstance(m_ParticleSpawned.gameObject);
         }
 
-        if (activatedSound != null && c.powerupSource.clip == activatedSound)
-            c.powerupSource.Stop(); //if this one the one using the audio source stop it
-
-        for (int i = 0; i < c.consumables.Count; ++i)
-        {
-            if (c.consumables[i].active && c.consumables[i].activatedSound != null)
-            {//if there is still an active consumable that have a sound, this is the one playing now
-                c.powerupSource.clip = c.consumables[i].activatedSound;
-                c.powerupSource.Play();
-            }
-        }
+        //  if (activatedSound != null && c.powerupSource.clip == activatedSound)
+        // //     c.powerupSource.Stop(); //if this one the one using the audio source stop it
+        //
+        // for (int i = 0; i < c.consumables.Count; ++i)
+        // {
+        //     if (c.consumables[i].active && c.consumables[i].activatedSound != null)
+        //     {//if there is still an active consumable that have a sound, this is the one playing now
+        //        // c.powerupSource.clip = c.consumables[i].activatedSound;
+        //        // c.powerupSource.Play();
+        //     }
+        // }
     }
 }

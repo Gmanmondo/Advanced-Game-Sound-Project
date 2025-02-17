@@ -400,7 +400,7 @@ public class GameState : AState
                 Destroy(m_PowerupIcons[i].gameObject);
         }
 
-        trackManager.characterController.powerupSource.Stop();
+//        trackManager.characterController.powerupSource.Stop();
 
         m_PowerupIcons.Clear();
     }

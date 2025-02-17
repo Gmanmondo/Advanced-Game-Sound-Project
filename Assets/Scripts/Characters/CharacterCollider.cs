@@ -163,7 +163,7 @@ public class CharacterCollider : MonoBehaviour
             // The collision killed the player, record all data to analytics.
 			else
 			{
-				//m_Audio.PlayOneShot(controller.character.deathSound);
+				AudioManager.instance.PlayOneShot(FMODEvents.instance.gameOver, this.transform.position);
 
 				m_DeathData.character = controller.character.characterName;
 				m_DeathData.themeUsed = controller.trackManager.currentTheme.themeName;

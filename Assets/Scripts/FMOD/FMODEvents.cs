@@ -11,6 +11,7 @@ public class FMODEvents : MonoBehaviour
     
     [field: Header("SFX")]
     [field: SerializeField] public EventReference bones {get; private set;}
+    [field: SerializeField] public EventReference gameOver {get; private set;}
     [field: SerializeField] public EventReference strafe {get; private set;}
     [field: SerializeField] public EventReference jump {get; private set;}
     [field: SerializeField] public EventReference slide {get; private set;}

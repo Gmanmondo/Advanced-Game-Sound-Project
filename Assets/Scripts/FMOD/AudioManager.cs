@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicArea(MusicArea area)
     {
-        musicEventInstance.setParameterByName("area", (float) area);
+        musicEventInstance.setParameterByName("music_change", (float) area);
     }
 
     private void InitializeAmbience(EventReference ambienceEventReference)
