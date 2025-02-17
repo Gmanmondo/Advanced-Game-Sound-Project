@@ -5,10 +5,10 @@ using UnityEngine;
 /// This script is the base class for implemented obstacles.
 /// Derived classes should take care of spawning any object needed for the obstacles.
 /// </summary>
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public abstract class Obstacle : MonoBehaviour
 {
-	public AudioClip impactedSound;
+	//public AudioClip impactedSound;
 
     public virtual void Setup() {}
 
@@ -17,19 +17,19 @@ public abstract class Obstacle : MonoBehaviour
 	public virtual void Impacted()
 	{
 		Animation anim = GetComponentInChildren<Animation>();
-		AudioSource audioSource = GetComponent<AudioSource>();
+		//AudioSource audioSource = GetComponent<AudioSource>();
 
 		if (anim != null)
 		{
 			anim.Play();
 		}
 
-		if (audioSource != null && impactedSound != null)
+		/*if (audioSource != null && impactedSound != null)
 		{
 			audioSource.Stop();
 			audioSource.loop = false;
 			audioSource.clip = impactedSound;
 			audioSource.Play();
-		}
+		}*/
 	}
 }

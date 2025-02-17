@@ -156,6 +156,7 @@ public class CharacterInputController : MonoBehaviour
 	public void StartMoving()
 	{
 		m_IsRunning = true;
+		
 	}
 
     public void StopMoving()
@@ -184,19 +185,25 @@ public class CharacterInputController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && TutorialMoveCheck(0))
         {
             ChangeLane(-1);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.strafe, this.transform.position);
         }
         else if(Input.GetKeyDown(KeyCode.RightArrow) && TutorialMoveCheck(0))
         {
             ChangeLane(1);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.strafe, this.transform.position);
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow) && TutorialMoveCheck(1))
         {
             Jump();
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
         }
 		else if (Input.GetKeyDown(KeyCode.DownArrow) && TutorialMoveCheck(2))
 		{
-			if(!m_Sliding)
+			if (!m_Sliding)
+			{
 				Slide();
+				AudioManager.instance.PlayOneShot(FMODEvents.instance.slide, this.transform.position);
+			}
 		}
 #else
         // Use touch input on mobile
@@ -404,7 +411,7 @@ public class CharacterInputController : MonoBehaviour
 
     public void UseConsumable(Consumable c)
     {
-		characterCollider.audio.PlayOneShot(powerUpUseSound);
+		//characterCollider.audio.PlayOneShot(powerUpUseSound);
 
         for(int i = 0; i < m_ActiveConsumables.Count; ++i)
         {

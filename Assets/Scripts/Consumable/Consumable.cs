@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using FMODUnity;
 using UnityEngine.AddressableAssets;
 
 /// <summary>

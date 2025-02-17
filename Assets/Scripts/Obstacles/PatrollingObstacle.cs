@@ -15,7 +15,7 @@ public class PatrollingObstacle : Obstacle
 	[Tooltip("Leave empty if no animation")]
 	public Animator animator;
 
-	public AudioClip[] patrollingSound;
+	//public AudioClip[] patrollingSound;
 
 	protected TrackSegment m_Segement;
 
@@ -23,7 +23,7 @@ public class PatrollingObstacle : Obstacle
 	protected float m_MaxSpeed;
 	protected float m_CurrentPos;
 
-	protected AudioSource m_Audio;
+	//protected AudioSource m_Audio;
     private bool m_isMoving = false;
 
     protected const float k_LaneOffsetToFullWidth = 2f;
@@ -57,13 +57,13 @@ public class PatrollingObstacle : Obstacle
 
     public override void Setup()
 	{
-		m_Audio = GetComponent<AudioSource>();
+		/*m_Audio = GetComponent<AudioSource>();
 		if(m_Audio != null && patrollingSound != null && patrollingSound.Length > 0)
 		{
 			m_Audio.loop = true;
 			m_Audio.clip = patrollingSound[Random.Range(0,patrollingSound.Length)];
 			m_Audio.Play();
-		}
+		}*/
 
 		m_OriginalPosition = transform.localPosition + transform.right * m_Segement.manager.laneOffset;
 		transform.localPosition = m_OriginalPosition;

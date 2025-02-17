@@ -7,7 +7,7 @@ using UnityEngine.AddressableAssets;
 /// Handles everything related to the collider of the character. This is actually an empty game object, NOT on the character prefab
 /// as for gameplay reason, we need a single size collider for every character. (Found on the Main scene PlayerPivot/CharacterSlot gameobject)
 /// </summary>
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public class CharacterCollider : MonoBehaviour
 {
 	static int s_HitHash = Animator.StringToHash("Hit");
@@ -31,13 +31,13 @@ public class CharacterCollider : MonoBehaviour
 	public ParticleSystem koParticle;
 
 	[Header("Sound")]
-	public AudioClip coinSound;
-	public AudioClip premiumSound;
+	//public AudioClip coinSound;
+	//public AudioClip premiumSound;
 
     public DeathEvent deathData { get { return m_DeathData; } }
     public new BoxCollider collider { get { return m_Collider; } }
 
-	public new AudioSource audio { get { return m_Audio; } }
+	//public new AudioSource audio { get { return m_Audio; } }
 
     [HideInInspector]
 	public List<GameObject> magnetCoins = new List<GameObject>();
@@ -49,7 +49,7 @@ public class CharacterCollider : MonoBehaviour
     protected bool m_Invincible;
     protected DeathEvent m_DeathData;
 	protected BoxCollider m_Collider;
-	protected AudioSource m_Audio;
+	//protected AudioSource m_Audio;
 
 	protected float m_StartingColliderHeight;
 
@@ -65,7 +65,7 @@ public class CharacterCollider : MonoBehaviour
     protected void Start()
     {
 		m_Collider = GetComponent<BoxCollider>();
-		m_Audio = GetComponent<AudioSource>();
+		//m_Audio = GetComponent<AudioSource>();
 		m_StartingColliderHeight = m_Collider.bounds.size.y;
 	}
 
@@ -157,13 +157,13 @@ public class CharacterCollider : MonoBehaviour
 
 			if (controller.currentLife > 0)
 			{
-				m_Audio.PlayOneShot(controller.character.hitSound);
+				//m_Audio.PlayOneShot(controller.character.hitSound);
                 SetInvincible ();
 			}
             // The collision killed the player, record all data to analytics.
 			else
 			{
-				m_Audio.PlayOneShot(controller.character.deathSound);
+				//m_Audio.PlayOneShot(controller.character.deathSound);
 
 				m_DeathData.character = controller.character.characterName;
 				m_DeathData.themeUsed = controller.trackManager.currentTheme.themeName;
